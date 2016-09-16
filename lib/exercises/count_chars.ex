@@ -4,22 +4,32 @@ defmodule CountChars do
   """
 
   def run do
-    with string = get_input |> cleanup,
-         count  = count(string)
-    do
-      IO.puts "#{string} has #{count} characters."
-    end
+    get_string
+    |> display_count
   end
 
-  def get_input do
+  def get_string do
     IO.gets "What is the input string? "
   end
 
-  def cleanup(str) do
-    String.trim_trailing(str, "\n")
+  def display_count(str) do
+    with string = str |> remove_newline,
+         count  = count(string)
+    do
+      summarize(string, count)
+      |> IO.puts
+    end
   end
 
   def count(str) do
     String.length(str)
+  end
+
+  defp remove_newline(str) do
+    String.trim_trailing(str, "\n")
+  end
+
+  defp summarize(str, count) do
+    "#{str} has #{count} characters."
   end
 end
