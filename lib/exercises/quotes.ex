@@ -3,6 +3,15 @@ defmodule Quotes do
   Exercise 3: Printing Quotes
   """
 
+  def run do
+    with qte       = get_quote |> cleanup,
+         authr     = get_author |> cleanup,
+         quotation = build_quotation(qte, authr)
+    do
+      IO.puts(quotation) 
+    end
+  end
+
   def get_quote do
     IO.gets "What is the quote? "
   end
@@ -16,19 +25,6 @@ defmodule Quotes do
   end
 
   def build_quotation(the_quote, the_author) do
-    with qte  = the_quote |> cleanup,
-         auth = the_author |> cleanup
-    do
-      "#{auth} says, \"#{qte}\""
-    end
-  end
-
-  def run do
-    with qte  = get_quote,
-         auth = get_author,
-         quotation = build_quotation(qte, auth)
-    do
-      IO.puts(quotation) 
-    end
+    "#{the_author} says, \"#{the_quote}\""
   end
 end
