@@ -15,7 +15,7 @@ defmodule HelloTest do
 
   test "display a message to user using the given name" do
     assert capture_io([input: "Frank\n", capture_prompt: false], fn ->
-      Hello.greet
+      Hello.run
     end) == "Hello, Frank, nice to meet you!\n"
   end
 end

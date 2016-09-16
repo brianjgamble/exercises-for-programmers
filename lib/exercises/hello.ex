@@ -1,5 +1,9 @@
 defmodule Hello do
-  def greet do
+  @moduledoc """
+  Exercise 1: SayingHello
+  """
+
+  def run do
     get_name
     |> cleanup
     |> display_greeting
