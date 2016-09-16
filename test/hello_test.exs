@@ -3,9 +3,10 @@ defmodule HelloTest do
   import ExUnit.CaptureIO
 
   test "prompts the user for a name" do
-    assert capture_io(fn ->
-      Hello.get_name
-    end) == "What is your name? "
+    prompt = capture_io([input: "jim"], fn ->
+      assert Hello.get_name == "jim"
+    end) 
+    assert prompt == "What is your name? "
   end
 
   test "removes spaces and newlines from input" do

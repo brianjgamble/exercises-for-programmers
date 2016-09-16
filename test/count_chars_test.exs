@@ -3,9 +3,10 @@ defmodule CountCharsTest do
   import ExUnit.CaptureIO
 
   test "prompt the user for an input string" do
-    assert capture_io(fn ->
-      CountChars.get_input
-    end) == "What is the input string? "
+    prompt = capture_io([input: "hello"], fn ->
+      assert CountChars.get_input == "hello"
+    end) 
+    assert prompt == "What is the input string? "
   end
 
   test "removes newline from a string" do
