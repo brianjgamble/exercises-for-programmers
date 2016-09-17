@@ -2,12 +2,13 @@ defmodule Exercises.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :exercises,
-     version: "0.1.0",
-     elixir: "~> 1.3",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     test_coverage: [tool: ExCoveralls],
+    [app:               :exercises,
+     escript:           escript_config,
+     version:           "0.1.0",
+     elixir:            "~> 1.3",
+     build_embedded:    Mix.env == :prod,
+     start_permanent:   Mix.env == :prod,
+     test_coverage:     [tool: ExCoveralls],
      preferred_cli_env: [
        "coveralls": :test,
        "coveralls.detail": :test,
@@ -37,5 +38,9 @@ defmodule Exercises.Mixfile do
     [
       {:excoveralls, "~> 0.5", only: :test}
     ]
+  end
+
+  defp escript_config do
+    [ main_module: Exercises.CLI ]
   end
 end

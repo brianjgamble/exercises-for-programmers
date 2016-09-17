@@ -18,3 +18,6 @@ erl_crash.dump
 
 # Ignore vim swap files
 .*.swp
+
+# Ignore command-line executablec
+/exercises
