@@ -17,7 +17,7 @@ defmodule CliTest do
     assert capture_io(:stderr, fn ->
       Exercises.CLI.process(0)
     end) == """
-    Error: 0 is an invalid number.
+    Exercise 0 was not found.
     """
   end
 end

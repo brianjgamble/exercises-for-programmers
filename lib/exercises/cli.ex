@@ -4,8 +4,10 @@ defmodule Exercises.CLI do
   various modules that will run a specific
   exercise.
   """
+  
+  @challenges Application.get_env(:exercises, :challenges)
 
-  def run(argv) do
+  def main(argv) do
     argv
     |> parse_args
     |> process
@@ -23,20 +25,20 @@ defmodule Exercises.CLI do
   end
 
   def process(:help) do
-    IO.puts "usage: exercises <exercise #>"
+    IO.puts """
+    usage: exercises <n>
+      n: number associated with the challenge [Valid range is 1 - #{Enum.count(@challenges)}.]
+    """
     System.halt(0)
   end
 
   def process(exercise) do
-    with challenges = Application.get_env(:exercises, :challenges)
-    do
-      if Map.has_key?(challenges, exercise) do
-        challenges
-        |> Map.get(exercise)
-        |> apply(:run, [])
-      else
-        IO.puts(:stderr, "Error: #{exercise} is an invalid number.")
-      end
+   if Map.has_key?(@challenges, exercise) do
+      @challenges
+      |> Map.get(exercise)
+      |> apply(:run, [])
+    else
+      IO.puts(:stderr, "Exercise #{exercise} was not found.")
     end
   end
 end
