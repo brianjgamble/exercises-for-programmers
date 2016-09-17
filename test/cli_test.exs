@@ -1,5 +1,6 @@
 defmodule CliTest do
   use ExUnit.Case
+  import ExUnit.CaptureIO
 
   import Exercises.CLI, only: [ parse_args: 1 ]
 
@@ -9,6 +10,14 @@ defmodule CliTest do
   end
 
   test "returns the exercise number" do
-    assert parse_args(["5"]) == "5"
+    assert parse_args(["5"]) == 5
+  end
+
+  test "prints an error message when an exercise is not found" do
+    assert capture_io(:stderr, fn ->
+      Exercises.CLI.process(0)
+    end) == """
+    Error: 0 is an invalid number.
+    """
   end
 end

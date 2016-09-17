@@ -17,7 +17,7 @@ defmodule Exercises.CLI do
 
     case parse do
       { [ help: true ], _, _ } -> :help
-      { _, [ exercise ], _ }   -> exercise
+      { _, [ exercise ], _ }   -> String.to_integer(exercise)
       _                        -> :help
     end
   end
@@ -27,7 +27,16 @@ defmodule Exercises.CLI do
     System.halt(0)
   end
 
-  def process(exercise_num) do
-    IO.puts "Running exercise #{exercise_num}"
+  def process(exercise) do
+    with challenges = Application.get_env(:exercises, :challenges)
+    do
+      if Map.has_key?(challenges, exercise) do
+        challenges
+        |> Map.get(exercise)
+        |> apply(:run, [])
+      else
+        IO.puts(:stderr, "Error: #{exercise} is an invalid number.")
+      end
+    end
   end
 end
