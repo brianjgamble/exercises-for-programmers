@@ -1,4 +1,4 @@
-defmodule MadLib do
+defmodule Exercises.MadLib do
   @moduledoc """
   Exercise 4: Mad Lib
   """

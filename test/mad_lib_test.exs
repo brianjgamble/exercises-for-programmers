@@ -2,6 +2,8 @@ defmodule MadLibTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
 
+  alias Exercises.MadLib, as: MadLib
+
   test "prompt for a noun" do
     prompt = capture_io([input: "car"], fn ->
       assert MadLib.get_noun == "car"

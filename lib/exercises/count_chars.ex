@@ -1,4 +1,4 @@
-defmodule CountChars do
+defmodule Exercises.CountChars do
   @moduledoc """
   Exercise 2: Counting the Number of Characters
   """

@@ -2,6 +2,8 @@ defmodule SimpleMathTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
 
+  alias Exercises.SimpleMath, as: SimpleMath
+
   test "prompt the user for the first number" do
     prompt = capture_io([input: "10"], fn ->
       assert SimpleMath.get_first_number == "10"

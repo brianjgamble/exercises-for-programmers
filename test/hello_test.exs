@@ -2,6 +2,8 @@ defmodule HelloTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
 
+  alias Exercises.Hello, as: Hello
+
   test "prompts the user for a name" do
     prompt = capture_io([input: "jim"], fn ->
       assert Hello.get_name == "jim"

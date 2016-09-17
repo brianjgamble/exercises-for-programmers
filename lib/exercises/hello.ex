@@ -1,4 +1,4 @@
-defmodule Hello do
+defmodule Exercises.Hello do
   @moduledoc """
   Exercise 1: SayingHello
   """

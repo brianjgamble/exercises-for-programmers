@@ -2,6 +2,8 @@ defmodule QuotesTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
 
+  alias Exercises.Quotes, as: Quotes
+
   test "prompt the user for a quote" do
     prompt = capture_io([input: "hello\n"], fn ->
       assert Quotes.get_quote == "hello\n"
