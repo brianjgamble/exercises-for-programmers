@@ -12,8 +12,7 @@ I'll be implementing the exercises using Elixir.
 
 ### Steps
 
-Make sure Elixir 1.3 installed and clone this repository locally.  In the 
-cloned respository direction, run the following commands:
+Clone this repository locally, and in the cloned directory, run the following commands:
 
 ```sh
 mix deps.get
