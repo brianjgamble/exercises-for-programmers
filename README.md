@@ -4,6 +4,8 @@
 
 I'm working through the book [Exercises for Programmers: 57 Challengs to Develop Your Coding Skills](https://pragprog.com/book/bhwb/exercises-for-programmers), and I will implement the first 52 exercises in Elixir.
 
+[View the [table of contents](http://media.pragprog.com/titles/bhwb/TOC.pdf) for a list of the exercises.]
+
 ## Installation
 
 ### Requirements
