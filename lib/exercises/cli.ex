@@ -27,8 +27,9 @@ defmodule Exercises.CLI do
   def process(:help) do
     IO.puts """
     usage: exercises <n>
-      n: number associated with the exercise. 
-         (Exercises 1 - #{Enum.count(@completed_exercises)} have been implemented.)
+      n: number of the exercise 
+
+    (Exercises 1 - #{Enum.count(@completed_exercises)} have been implemented.)
     """
     System.halt(0)
   end
