@@ -13,6 +13,11 @@ defmodule Exercises.CLI do
     |> process
   end
 
+  @doc """
+  `argv` can be -h, --help, or the number of an exercise to run.
+
+  Returns the exercise number or `:help` if help was given.
+  """
   def parse_args(argv) do
     parse = OptionParser.parse(argv, switches: [ help: :boolean],
                                      aliases:  [ h:    :help   ])
@@ -35,7 +40,7 @@ defmodule Exercises.CLI do
   end
 
   def process(exercise_num) do
-   if Map.has_key?(@completed_exercises, exercise_num) do
+    if Map.has_key?(@completed_exercises, exercise_num) do
       @completed_exercises
       |> Map.get(exercise_num)
       |> apply(:run, [])
