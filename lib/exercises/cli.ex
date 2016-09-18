@@ -43,12 +43,24 @@ defmodule Exercises.CLI do
   end
 
   def process(exercise_num) do
-    if Map.has_key?(@completed_exercises, exercise_num) do
-      @completed_exercises
-      |> Map.get(exercise_num)
-      |> apply(:run, [])
+    if completed_exercise?(exercise_num) do
+      run_exercise(exercise_num)
     else
-      IO.puts(:stderr, "Exercise #{exercise_num} was not implemented.")
+      display_error_for_missing_exercise(exercise_num)
     end
+  end
+
+  defp completed_exercise?(num) do
+    Map.has_key?(@completed_exercises, num)
+  end
+
+  defp run_exercise(num) do
+    @completed_exercises
+    |> Map.get(num)
+    |> apply(:run, [])
+  end
+
+  defp display_error_for_missing_exercise(num) do
+    IO.puts(:stderr, "Exercise #{num} was not implemented.")
   end
 end
