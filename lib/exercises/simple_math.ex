@@ -3,11 +3,13 @@ defmodule Exercises.SimpleMath do
   Exercise 5: Simple Math
   """
 
+  @operations ["+", "-", "*", "/"]
+
   def run do
-    with n1 = get_first_number |> to_number,
-         n2 = get_second_number |> to_number
+    with x = get_first_number |> to_number,
+         y = get_second_number |> to_number
     do
-      display_calculations(n1, n2)
+      display_calculations(x, y)
     end
    end
 
@@ -19,35 +21,35 @@ defmodule Exercises.SimpleMath do
     IO.gets "What is the second number? "
   end
 
-  def display_calculations(n1, n2) do
-    ["+", "-", "*", "/"]
-    |> Enum.map(fn(op) -> IO.puts calculate(n1, n2, op) end)
+  def display_calculations(x, y) do
+    Enum.map(@operations, fn(operation) ->
+      with answer = calculate(operation, x, y),
+           output = "#{x} #{operation} #{y} = #{answer}"
+      do
+           IO.puts(output)
+      end
+    end)
   end
 
-  def calculate(n1, n2, op) do
-    result = case(op) do
-      "+" -> add(n1, n2)
-      "-" -> subtract(n1, n2)
-      "*" -> multiply(n1, n2)
-      "/" -> divide(n1, n2)
-    end
-    "#{n1} #{op} #{n2} = #{result}"
+  defp calculate("+", x, y), do: add(x, y)
+  defp calculate("-", x, y), do: subtract(x, y)
+  defp calculate("*", x, y), do: multiply(x, y)
+  defp calculate("/", x, y), do: divide(x, y)
+
+  def add(x, y) do
+    x + y
   end
 
-  def add(n1, n2) do
-    n1 + n2
+  def subtract(x, y) do
+    x - y
   end
 
-  def subtract(n1, n2) do
-    n1 - n2
+  def multiply(x, y) do
+    x * y
   end
 
-  def multiply(n1, n2) do
-    n1 * n2
-  end
-
-  def divide(n1, n2) do
-    n1 / n2
+  def divide(x, y) do
+    x / y
   end
 
   defp to_number(val) do
