@@ -5,7 +5,7 @@ defmodule Exercises.CLI do
   exercise.
   """
   
-  @challenges Application.get_env(:exercises, :challenges)
+  @completed_exercises Application.get_env(:exercises, :completed)
 
   def main(argv) do
     argv
@@ -27,18 +27,19 @@ defmodule Exercises.CLI do
   def process(:help) do
     IO.puts """
     usage: exercises <n>
-      n: number associated with the challenge [Valid range is 1 - #{Enum.count(@challenges)}.]
+      n: number associated with the exercise. 
+         (Exercises 1 - #{Enum.count(@completed_exercises)} have been implemented.)
     """
     System.halt(0)
   end
 
-  def process(exercise) do
-   if Map.has_key?(@challenges, exercise) do
-      @challenges
-      |> Map.get(exercise)
+  def process(exercise_num) do
+   if Map.has_key?(@completed_exercises, exercise_num) do
+      @completed_exercises
+      |> Map.get(exercise_num)
       |> apply(:run, [])
     else
-      IO.puts(:stderr, "Exercise #{exercise} was not found.")
+      IO.puts(:stderr, "Exercise #{exercise_num} was not implemented.")
     end
   end
 end

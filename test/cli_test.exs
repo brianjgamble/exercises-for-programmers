@@ -17,7 +17,7 @@ defmodule CliTest do
     assert capture_io(:stderr, fn ->
       Exercises.CLI.process(0)
     end) == """
-    Exercise 0 was not found.
+    Exercise 0 was not implemented.
     """
   end
 end
