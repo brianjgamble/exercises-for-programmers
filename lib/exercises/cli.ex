@@ -23,11 +23,14 @@ defmodule Exercises.CLI do
                                      aliases:  [ h:    :help   ])
 
     case parse do
-      { [ help: true ], _, _ } -> :help
-      { _, [ exercise ], _ }   -> String.to_integer(exercise)
-      _                        -> :help
+      { [ help: true ], _, _ }   -> :help
+      { _, [ exercise_num ], _ } -> as_string(exercise_num)
+      _                          -> :help
     end
   end
+
+  defp as_string(str) when is_binary(str), do: str
+  defp as_string(str), do: to_string(str)
 
   def process(:help) do
     IO.puts """

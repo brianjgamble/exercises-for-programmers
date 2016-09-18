@@ -10,7 +10,8 @@ defmodule CliTest do
   end
 
   test "returns the exercise number" do
-    assert parse_args(["5"]) == 5
+    assert parse_args(["5"]) == "5"
+    assert parse_args([7]) == "7"
   end
 
   test "prints an error message when an exercise is not found" do
