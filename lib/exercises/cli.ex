@@ -37,7 +37,7 @@ defmodule Exercises.CLI do
     usage: exercises <n>
       n: number of the exercise 
 
-    (Exercises 1 - #{Enum.count(@completed_exercises)} have been implemented.)
+    The following exercises have been implemented: #{list_of_exercises}
     """
     System.halt(0)
   end
@@ -62,5 +62,9 @@ defmodule Exercises.CLI do
 
   defp display_error_for_missing_exercise(num) do
     IO.puts(:stderr, "Exercise #{num} was not implemented.")
+  end
+
+  defp list_of_exercises do
+    Map.keys(@completed_exercises) |> Enum.join(", ")
   end
 end
