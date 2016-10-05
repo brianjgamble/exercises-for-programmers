@@ -2,7 +2,7 @@
 
 ## Overview
 
-I'm working through the book [Exercises for Programmers: 57 Challengs to Develop Your Coding Skills](https://pragprog.com/book/bhwb/exercises-for-programmers), and I will implement the first 52 exercises in Elixir.  (I'll address the last five later since they are full programs.)
+I'm using the book [Exercises for Programmers: 57 Challengs to Develop Your Coding Skills](https://pragprog.com/book/bhwb/exercises-for-programmers) as a source of unique exercises that I will implement in Elixir.
 
 [View the [table of contents](http://media.pragprog.com/titles/bhwb/TOC.pdf) for a list of the exercises.]
 
@@ -13,6 +13,12 @@ To implement each exercise, I'm focused on the following:
 - constraints
 
 *For now, I'm skipping the challenges in each exercise since some suggest writing alternate versions or creating a GUI.*
+
+## Completed So Far
+
+| Chapter | Exercises |
+| --------|:---------:|
+| 2       | 1 - 6     |
 
 ## Installation
 
