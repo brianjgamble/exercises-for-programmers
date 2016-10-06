@@ -33,12 +33,7 @@ defmodule Exercises.CLI do
   defp as_string(str), do: to_string(str)
 
   def process(:help) do
-    IO.puts """
-    usage: exercises <n>
-      n: number of the exercise 
-
-    The following exercises have been implemented: #{list_of_exercises}
-    """
+    IO.puts(usage)
     System.halt(0)
   end
 
@@ -48,6 +43,15 @@ defmodule Exercises.CLI do
     else
       display_error_for_missing_exercise(exercise_num)
     end
+  end
+
+  def usage do 
+    """
+    usage: exercises <n>
+    n: number of the exercise 
+
+    The following exercises have been implemented: #{list_of_exercises}
+    """
   end
 
   defp completed_exercise?(num) do
