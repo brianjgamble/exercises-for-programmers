@@ -2,9 +2,8 @@
 
 ## Overview
 
-I'm using the book [Exercises for Programmers: 57 Challengs to Develop Your Coding Skills](https://pragprog.com/book/bhwb/exercises-for-programmers) as a source of unique exercises to implement in Elixir and to demonstrate how I test and write code.
+I'm using the book [Exercises for Programmers: 57 Challengs to Develop Your Coding Skills](https://pragprog.com/book/bhwb/exercises-for-programmers) as a source of unique exercises to implement in Elixir and to demonstrate how I test and write code.  For a list of the exercises, you can view the [table of contents](http://media.pragprog.com/titles/bhwb/TOC.pdf) on pragprog.com.
 
-(For a list of the exercises, you can view the [table of contents](http://media.pragprog.com/titles/bhwb/TOC.pdf) on pragprog.com.
 
 As I implement each exercise, I'll be focused on the problem statement, example output, and constraints.  I'm skipping the challenges in each exercise since many suggest writing an alternate version or creating a GUI. 
 
