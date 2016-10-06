@@ -15,14 +15,14 @@ defmodule CliTest do
   end
 
   test "usage message includes completed exercises" do
-    assert Exercises.CLI.usage =~ "The following exercises have been implemented: 1, 2"
+    assert Exercises.CLI.usage =~ "The following exercises have been implemented: 1, 2\n"
   end
 
   test "prints an error message when an exercise is not found" do
     assert capture_io(:stderr, fn ->
-      Exercises.CLI.process(0)
+      Exercises.CLI.process("3")
     end) == """
-    Exercise 0 was not implemented.
+    Exercise 3 was not implemented.
     """
   end
 
