@@ -27,6 +27,8 @@ To implement each exercise, I'm focused on the following:
 - Elixir 1.3
 - git
 
+Installation instructions for Mac OS X, Unix, and Windows can be found at [elixir-lang.org](http://elixir-lang.org/install.html).
+
 ### Steps
 
 1.  Clone this repository locally.
