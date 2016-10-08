@@ -14,8 +14,15 @@ defmodule CliTest do
     assert parse_args([7]) == "7"
   end
 
-  test "usage message includes completed exercises" do
-    assert Exercises.CLI.usage =~ "The following exercises have been implemented: 1, 2\n"
+  test "processing :help prints the usage message" do
+    assert capture_io(:stdio, fn ->
+      Exercises.CLI.process(:help)
+    end) == """
+    usage: exercises <n>
+    n: number of the exercise 
+
+    The following exercises have been implemented: 1, 2\n
+    """
   end
 
   test "prints an error message when an exercise is not found" do
