@@ -10,8 +10,8 @@ As I implement each exercise, I'll be focused on the problem statement, example 
 ## Completed So Far
 
 | Chapter | Exercises |
-|:-------:|:---------:|
-| 2       | 1 - 6     |
+|:-------:|:----------|
+| 2       | [1](lib/exercises/hello.ex), [2](lib/exercises/count_chars.ex), [3](lib/exercises/quotes.ex), [4](lib/exercises/mad_lib.ex), [5](lib/exercises/simple_math.ex), [6](/lib/exercises/retirement_calc.ex) |
 
 ## Installation
 
