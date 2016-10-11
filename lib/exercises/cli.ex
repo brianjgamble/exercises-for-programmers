@@ -60,7 +60,7 @@ defmodule Exercises.CLI do
   end
 
   defp display_error_for_missing_exercise(num) do
-    IO.puts(:stderr, "Exercise #{num} was not implemented.")
+    IO.puts(:stderr, "Exercise #{num} is not implemented.")
   end
 
   defp list_of_exercises do

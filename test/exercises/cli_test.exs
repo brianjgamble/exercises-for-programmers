@@ -29,7 +29,7 @@ defmodule CliTest do
     assert capture_io(:stderr, fn ->
       Exercises.CLI.process("3")
     end) == """
-    Exercise 3 was not implemented.
+    Exercise 3 is not implemented.
     """
   end
 
