@@ -17,10 +17,8 @@ As I implement each exercise, I'll be focused on the problem statement, example 
 
 ### Requirements
 
-- Elixir 1.3
-- git
-
-Installation instructions for Mac OS X, Unix, and Windows can be found at [elixir-lang.org](http://elixir-lang.org/install.html).
+- [Elixir 1.3](http://elixir-lang.org/install.html)
+- [git](https://git-scm.com/downloads)
 
 ### Steps
 
