@@ -1,4 +1,4 @@
-defmodule Exercises.RetirementCalc do
+defmodule Exercises.ChapterTwo.RetirementCalc do
   @moduledoc """
   Exercise 6: Retirement Calculator
   """

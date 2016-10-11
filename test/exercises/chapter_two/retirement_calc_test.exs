@@ -1,8 +1,8 @@
-defmodule RetirementCalcTest do
+defmodule Exercises.ChapterTwo.RetirementCalcTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
 
-  alias Exercises.RetirementCalc, as: RetirementCalc
+  alias Exercises.ChapterTwo.RetirementCalc
 
   test "prompt the user for their current age" do
     prompt = capture_io([input: "20"], fn ->

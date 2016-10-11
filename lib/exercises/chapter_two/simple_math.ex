@@ -1,4 +1,4 @@
-defmodule Exercises.SimpleMath do
+defmodule Exercises.ChapterTwo.SimpleMath do
   @moduledoc """
   Exercise 5: Simple Math
   """

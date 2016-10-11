@@ -1,8 +1,8 @@
-defmodule CountCharsTest do
+defmodule Exercises.ChapterTwo.CountCharsTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
 
-  alias Exercises.CountChars, as: CountChars
+  alias Exercises.ChapterTwo.CountChars
 
   test "prompt the user for an input string" do
     prompt = capture_io([input: "hello"], fn ->

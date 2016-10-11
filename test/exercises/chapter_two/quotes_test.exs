@@ -1,8 +1,8 @@
-defmodule QuotesTest do
+defmodule Exercises.ChapterTwo.QuotesTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
 
-  alias Exercises.Quotes, as: Quotes
+  alias Exercises.ChapterTwo.Quotes
 
   test "prompt the user for a quote" do
     prompt = capture_io([input: "hello\n"], fn ->

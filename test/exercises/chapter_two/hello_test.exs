@@ -1,8 +1,8 @@
-defmodule HelloTest do
+defmodule Exercises.ChapterTwo.HelloTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
 
-  alias Exercises.Hello, as: Hello
+  alias Exercises.ChapterTwo.Hello
 
   test "prompts the user for a name" do
     prompt = capture_io([input: "jim"], fn ->

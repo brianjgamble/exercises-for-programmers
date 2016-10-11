@@ -1,8 +1,8 @@
-defmodule SimpleMathTest do
+defmodule Exercises.ChapterTwo.SimpleMathTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
 
-  alias Exercises.SimpleMath, as: SimpleMath
+  alias Exercises.ChapterTwo.SimpleMath
 
   test "prompt the user for the first number" do
     prompt = capture_io([input: "10"], fn ->

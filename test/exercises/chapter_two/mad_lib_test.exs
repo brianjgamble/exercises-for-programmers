@@ -1,8 +1,8 @@
-defmodule MadLibTest do
+defmodule Exercises.ChapterTwo.MadLibTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
 
-  alias Exercises.MadLib, as: MadLib
+  alias Exercises.ChapterTwo.MadLib
 
   test "prompt for a noun" do
     prompt = capture_io([input: "car"], fn ->

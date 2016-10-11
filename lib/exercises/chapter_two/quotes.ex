@@ -1,4 +1,4 @@
-defmodule Exercises.Quotes do
+defmodule Exercises.ChapterTwo.Quotes do
   @moduledoc """
   Exercise 3: Printing Quotes
   """
