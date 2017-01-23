@@ -17,7 +17,7 @@ As I implement each exercise, I'll be focused on the problem statement, example 
 
 ### Requirements
 
-- [Elixir 1.3](http://elixir-lang.org/install.html)
+- [Elixir](http://elixir-lang.org/install.html) - 1.3 or greater
 - [git](https://git-scm.com/downloads)
 
 ### Steps
